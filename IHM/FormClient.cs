@@ -52,6 +52,7 @@ namespace DAL
             {
                 throw;
             }
+            this.Close();
         }
     }
 }

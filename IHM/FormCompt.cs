@@ -93,7 +93,8 @@ namespace IHM
                     cptBLL.updateCompte(cpt);
                     gridViewLoad();
                     MessageBox.Show("Crédit bien effectué!");
-                    tb1.Clear();                 
+                    tb1.Clear();
+                    tb1.Focus();                 
                 }
 
                 if (btnValider.Text == "Débiter")
@@ -103,6 +104,8 @@ namespace IHM
                     if (cpt.débiter(dDebit) == false)
                     {
                         MessageBox.Show("Prélèvement non autorisé! Votre découvert: " + cpt.Decouv + " Votre solde: " + cpt.Solde);
+                        tb1.Clear();
+                        tb1.Focus();
                     }
                     else
                     {
@@ -119,6 +122,7 @@ namespace IHM
                     if (cpt.setDecouv(dDecouv) == false)
                     {
                         MessageBox.Show("Désolez! Votre nouveau découvert est invalide! Votre solde est déja négatif de " + -cpt.Solde + " Euros");
+                        tb1.Clear();
                     }
                     else
                     {
